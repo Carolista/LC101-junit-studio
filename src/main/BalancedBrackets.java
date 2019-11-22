@@ -21,6 +21,7 @@ public class BalancedBrackets {
      * @param str - to be validated
      * @return true if balanced, false otherwise
      */
+
     public static boolean hasBalancedBrackets(String str) {
         int brackets = 0;
         for (char ch : str.toCharArray()) {
@@ -29,7 +30,26 @@ public class BalancedBrackets {
             } else if (ch == ']') {
                 brackets--;
             }
+            if (brackets < 0) {
+                break;
+            }
         }
         return brackets == 0;
     }
+
+    // JASON'S CODE
+
+//    public static boolean hasBalancedBrackets(String str) {
+//        int brackets = 0;
+//        for (char ch : str.toCharArray()) {
+//            if (ch == '[') {
+//                brackets++;
+//            } else if (ch == ']') {
+//                brackets--;
+//                if (brackets < 0) {
+//                    return false;
+//                }
+//            }
+//        } return brackets == 0;
+//    }
 }
